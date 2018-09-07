@@ -27,8 +27,7 @@ class ForArrayClass
         foreach ($this->arr1  as $value) {
             
             if ($value == $this->needle) {
-                return true;
-                
+                return true;  
             }
         }
         
@@ -86,7 +85,3 @@ $array2 = array("b" => "green", "yellow", "red");
 var_dump($obj->arrayDiff($array1, $array2));
 
 var_dump($obj->sortArray());
-
-
-
-
