@@ -4,10 +4,17 @@ class ForArrayClass
 {
     public $arr1;
     public $needle;
+    public $count;
     
     public function __construct(array $arr1){
         $this->arr1 = $arr1;
         $this->needle = 8;
+        $this->getCountArr();
+    }
+
+    public function getCountArr() {
+        $this->count = count($this->arr1);
+
     }
     
     // array_sum
@@ -53,18 +60,21 @@ class ForArrayClass
      // sort
      public function sortArray() {
         
-        $count_arr = count($this->arr1);
         $change = $this->arr1[0];
+        $temp = $this->count;
         
-        foreach ($this->arr1 as $value) {
+        for ($i=0; $i<$temp; $i++) {
+            $temp = $i-$i;
             
-            for ($j=0; $j<$count_arr-1; $j++) {
-       
+            for ($j=0; $j<$this->count-1; $j++) {
+               
                 if ($this->arr1[$j] > $this->arr1[$j+1]) {
                     $change = $this->arr1[$j];
                     $this->arr1[$j] = $this->arr1[$j+1];
                     $this->arr1[$j+1] = $change;
+                    $temp++;
                 }
+
             }
         }
         
